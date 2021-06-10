@@ -9,8 +9,39 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Many are stubborn in pursuit of the path they have chosen, few in pursuit of the goal</description>
-    <pubDate>Thu, 10 Jun 2021 13:48:59 GMT</pubDate>
+    <pubDate>Thu, 10 Jun 2021 14:41:15 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Over Permission</title>
+      <link>http://example.com/2021/06/10/Over-Permission/</link>
+      <guid>http://example.com/2021/06/10/Over-Permission/</guid>
+      <pubDate>Thu, 10 Jun 2021 14:33:48 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;Over-Permission&quot;&gt;&lt;a href=&quot;#Over-Permission&quot; class=&quot;headerlink&quot; title=&quot;Over Permission&quot;&gt;&lt;/a&gt;Over Permission&lt;/h1&gt;&lt;p&gt;如果使用A用户的权限去操作B用户的数据，A的权限小于B的权限，如果能够成功操作，则称之为越权操作   &lt;/p&gt;
+&lt;p&gt;越权漏洞形成的原因是后台使用了不合理的权限校验规则导致的                &lt;/p&gt;
+&lt;p&gt;一般越权漏洞容易出现在权限页面（需要登录的页面）增、删、改、查的的地方&lt;/p&gt;
+&lt;p&gt;后台需要对当前用户的权限进行校验，看其是否具备操作的权限，从而给出响应，而如果校验的规则过于简单则容&lt;/p&gt;
+&lt;p&gt;易出现越权漏洞&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Over-Permission"><a href="#Over-Permission" class="headerlink" title="Over Permission"></a>Over Permission</h1><p>如果使用A用户的权限去操作B用户的数据，A的权限小于B的权限，如果能够成功操作，则称之为越权操作   </p><p>越权漏洞形成的原因是后台使用了不合理的权限校验规则导致的                </p><p>一般越权漏洞容易出现在权限页面（需要登录的页面）增、删、改、查的的地方</p><p>后台需要对当前用户的权限进行校验，看其是否具备操作的权限，从而给出响应，而如果校验的规则过于简单则容</p><p>易出现越权漏洞</p><span id="more"></span>           <h2 id="P1-水平越权"><a href="#P1-水平越权" class="headerlink" title="P1 水平越权"></a>P1 水平越权</h2><h3 id="S1-初步思考尝试"><a href="#S1-初步思考尝试" class="headerlink" title="S1 初步思考尝试"></a>S1 初步思考尝试</h3><p>—&gt;纯初学者，小白</p><p>—&gt;这部分较为繁琐，想看整理好的直接版本点击右侧目录</p><h4 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h4><p>点开题目进行观察</p><img src="/2021/06/10/Over-Permission/1.png" alt="1" style="zoom:67%;"><p>初次见到的题型是在合天网安实验室中跟着指导书在实验机上做的题</p><p>他是在已知了一个人的账号后再去进行抓包观察修改等一系列操作</p><p>但这里直接是一个Login</p><p>1.我先随便输入了Username与Password，用Burp进行抓包观察，并无用处—&gt;想法错误</p><p>2.打开开发者工具，观察该题的php文件，发现了有用信息</p><img src="/2021/06/10/Over-Permission/2.png" alt="2" style="zoom:67%;"><p>分别登录这三个账号，网页就是简单的个人介绍</p><h4 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h4><p>登录Lili账号，点击查看个人信息，观察URL</p><p>/op1_mem.php?username=lili&amp;submit=点击查看个人信息</p><p>—&gt;那么如果将username修改为其他两个人，会是什么样</p><p>修改为username=lucy  username=kobe</p><p>发现网页跳转到了相应的人的信息页面中</p><p>=&gt;存在水平越权漏洞</p><h3 id="S2-总结"><a href="#S2-总结" class="headerlink" title="S2 总结"></a>S2 总结</h3><p>1.观察源代码知三个账号：lucy/123456，lili/123456，kobe/123456</p><p>2.登陆后点击”点击查看个人信息“</p><p>3.观察URL：通过GET请求，将要查询的用户信息传递给后台</p><p>localhost/pikachu-master/vul/overpermission/op1/op1_mem.php?username=lili&amp;submit=点击查看个人信息</p><p>4.将username修改为lucy,kobe，提交申请后即可查看两人信息</p><p>5.结论：存在水平越权漏洞</p><h2 id="P2垂直越权"><a href="#P2垂直越权" class="headerlink" title="P2垂直越权"></a>P2垂直越权</h2><h4 id="Step-1-1"><a href="#Step-1-1" class="headerlink" title="Step 1"></a>Step 1</h4><p>点开题目观察，与上一题图片一样</p><p>按照上一题的思路：</p><p>打开开发者工具查看源代码，得到两条用户信息</p><img src="/2021/06/10/Over-Permission/4.png" alt="4" style="zoom:67%;"><h4 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2"></a>Step 2</h4><p>分别登录两个用户，进行观察</p><p>普通用户pikachu：</p><img src="/2021/06/10/Over-Permission/5.png" alt="5" style="zoom:67%;"><p>超级用户admin：</p><img src="/2021/06/10/Over-Permission/6.png" alt="6" style="zoom:50%;"><p>尝试修改URL无果</p><h4 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h4><p>登录admin账号进行添加操作，并用burp进行抓包</p><img src="/2021/06/10/Over-Permission/7.png" alt="7" style="zoom:67%;"><p>Cookie: PHPSESSID=4dl2v9a8o35dok7ght440s8477</p><p>登录普通用户</p><img src="/2021/06/10/Over-Permission/8.png" alt="8" style="zoom:80%;"><p>Cookie: PHPSESSID=nd2k3u867n9578uf7dur3ch04s</p><p>将管理员添加用户的包发送给repeater</p><p>修改管理员的Cookie为普通用户的Cookie，发送</p><img src="/2021/06/10/Over-Permission/9.png" alt="9" style="zoom:80%;"><p>发现以普通用户的身份进行了添加操作</p><img src="/2021/06/10/Over-Permission/10.png" alt="10" style="zoom:80%;"><p>更改username，password，sex等数值，仍以普通用户登录的身份插入进去</p><p>=&gt;存在垂直越权</p>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/">漏洞靶场练习</category>
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/Pikachu/">Pikachu</category>
+      
+      
+      <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      
+      <comments>http://example.com/2021/06/10/Over-Permission/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Pikachu安装</title>
