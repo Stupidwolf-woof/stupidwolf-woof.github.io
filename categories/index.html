@@ -30,7 +30,7 @@
 <meta property="og:description" content="Many are stubborn in pursuit of the path they have chosen, few in pursuit of the goal">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-08T13:01:58.000Z">
-<meta property="article:modified_time" content="2021-06-08T13:03:28.886Z">
+<meta property="article:modified_time" content="2021-06-09T05:41:01.130Z">
 <meta property="article:author" content="stupidwolf">
 <meta name="twitter:card" content="summary">
 
@@ -244,6 +244,11 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MzU0NC8zMDAxOA=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -425,6 +430,21 @@
 
   
 
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
