@@ -9,8 +9,89 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Many are stubborn in pursuit of the path they have chosen, few in pursuit of the goal</description>
-    <pubDate>Thu, 10 Jun 2021 14:41:15 GMT</pubDate>
+    <pubDate>Mon, 14 Jun 2021 05:05:01 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>越权修改密码</title>
+      <link>http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/</link>
+      <guid>http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/</guid>
+      <pubDate>Fri, 11 Jun 2021 10:56:13 GMT</pubDate>
+      
+      <description>&lt;p&gt;越权操作思路+流程&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>越权操作思路+流程</p><span id="more"></span><h1 id="观察页面"><a href="#观察页面" class="headerlink" title="观察页面"></a>观察页面</h1><p>打开靶场观察</p><img src="/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/1.png" alt="1" style="zoom:50%;"><p>先尝试最常用的：用户名密码均为admin</p><p>登陆成功，提示修改密码</p><img src="/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/2.png" style="zoom:50%;"><p>URL：/control/auth_cross/cross_auth_passwd2.php?id=1</p><p>查看数据库知他有两个账户</p><ul><li>admin    admin </li><li>aaaaa    asdfsadf</li></ul><p>登录第二个账户</p><p>修改界面与admin相同</p><p>URL：control/auth_cross/cross_auth_passwd2.php?id=2</p><p>尝试将id改为1后刷新网页</p><p>URL变为：/control/auth_cross/cross_auth_passwd2.php?id=1</p><p>则此时便可对admin账户进行密码修改操作</p><h1 id="抓取数据包"><a href="#抓取数据包" class="headerlink" title="抓取数据包"></a>抓取数据包</h1><p>根据题目，是要越权修改密码</p><p>打开Burp，抓取admin修改密码时的数据包</p><p>PHPSESSID=7e8a67ea03add4001e3c0723a97321da</p><p>再抓取普通用户修改密码时的数据包</p><p>send to repeater</p><img src="/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/3.png" alt="3" style="zoom:50%;"><p>发现admin与普通用户的PHPSESSID相同</p><p>修改：id=1，旧密码为admin旧密码，再修改新密码</p><p>发现修改成功</p><p>若随便输入一个旧密码是否起作用</p><p>修改：id=1，旧密码111（随便输），新密码456</p><p>修改成功</p><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>通过将id值，新密码值随便修改，便可达到越权修改密码的目的</p>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/">漏洞靶场练习</category>
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/Webug4-0/">Webug4.0</category>
+      
+      
+      <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      <category domain="http://example.com/tags/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA/">漏洞靶场</category>
+      
+      
+      <comments>http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webug安装</title>
+      <link>http://example.com/2021/06/11/Webug%E5%AE%89%E8%A3%85/</link>
+      <guid>http://example.com/2021/06/11/Webug%E5%AE%89%E8%A3%85/</guid>
+      <pubDate>Fri, 11 Jun 2021 09:42:57 GMT</pubDate>
+      
+      <description>&lt;p&gt;WeBug名称定义为“我们的漏洞”靶场环境&lt;br&gt;基础环境是基于PHP/mysql制作搭建而成，中级环境与高级环境分别都是由互联网漏洞事件而收集的漏洞存在的操作环境&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>WeBug名称定义为“我们的漏洞”靶场环境<br>基础环境是基于PHP/mysql制作搭建而成，中级环境与高级环境分别都是由互联网漏洞事件而收集的漏洞存在的操作环境</p><span id="more"></span><h1 id="安装虚拟机VMWare"><a href="#安装虚拟机VMWare" class="headerlink" title="安装虚拟机VMWare"></a>安装虚拟机VMWare</h1><p>官方下载地址：<a href="https://www.vmware.com/cn/products/workstation-pro.html">Windows 虚拟机 | Workstation Pro | VMware | CN</a></p><p>下载后的仅为试用版</p><p>需后续破解—&gt;百度查询</p><h1 id="下载Webug"><a href="#下载Webug" class="headerlink" title="下载Webug"></a>下载Webug</h1><p>官方网站现已打不开</p><p>好多文章下附的百度网盘链接都已失效</p><p>推荐github下载</p><p>github地址：<a href="https://github.com/wangai3176/webug4.0">GitHub - wangai3176/webug4.0: webug4.0</a></p><p>—&gt;不要直接下载git上传的zip，看readme后面分享的链接</p><h1 id="使用Webug"><a href="#使用Webug" class="headerlink" title="使用Webug"></a>使用Webug</h1><p>解压下载好的文件：</p><img src="/2021/06/11/Webug%E5%AE%89%E8%A3%85/1.png" style="zoom:67%;"><p>点开Windows Server 2003 Enterprise Edition</p><p>找到Windows Server 2003 Enterprise Edition.vmx</p><p>使用VMWare打开</p><p>页面为Win2003系统页面（登录界面密码为空）</p><img src="/2021/06/11/Webug%E5%AE%89%E8%A3%85/2.png" alt="2" style="zoom:50%;"><p>Win+r进入cmd</p><p>输入指令ipconfig查询虚拟机的ip地址（192.168.XX.XX）</p><p>回到主机，打开浏览器，访问刚刚的IP</p><img src="/2021/06/11/Webug%E5%AE%89%E8%A3%85/3.png" style="zoom:50%;"><p>用户名密码均为admin</p><p>登陆后进入Webug靶场</p><img src="/2021/06/11/Webug%E5%AE%89%E8%A3%85/4.png" alt="4" style="zoom:50%;"><h1 id="源码方式"><a href="#源码方式" class="headerlink" title="源码方式"></a>源码方式</h1><p>按Webug中的readme知</p><p>还有一种类似于Pikachu靶场搭建的方法，不需要虚拟机</p><p>但最终结果是</p><p>显示login界面，但登陆后就是空白页面</p><p>未寻找到答案</p>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/">漏洞靶场练习</category>
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/Webug4-0/">Webug4.0</category>
+      
+      
+      <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      
+      <comments>http://example.com/2021/06/11/Webug%E5%AE%89%E8%A3%85/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>越权+支付逻辑+条件竞争</title>
+      <link>http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83-%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91-%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/</link>
+      <guid>http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83-%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91-%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/</guid>
+      <pubDate>Fri, 11 Jun 2021 03:56:46 GMT</pubDate>
+      
+      <description>&lt;p&gt;越权漏洞、支付逻辑漏洞，条件竞争漏洞的定义、分类、利用方法及其预防措施&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>越权漏洞、支付逻辑漏洞，条件竞争漏洞的定义、分类、利用方法及其预防措施</p><span id="more"></span><h1 id="越权漏洞"><a href="#越权漏洞" class="headerlink" title="越权漏洞"></a>越权漏洞</h1><h2 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h2><p>越权访问（Broken Access Control，简称BAC），指应用在检查授权时存在纰漏，使得攻击者在获得低权限用户</p><p>账户后，利用一些方式绕过权限检查，访问或者操作其他用户或者更高权限。</p><h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><p>（1）横向/水平越权访问漏洞(权限相同)：攻击者尝试访问与他拥有相同权限的用户资源</p><p>（2）与纵向/垂直越权访问漏洞(权限不同)：由于后台应用没有做权限控制，或仅仅在菜单按钮上做了权限控制，</p><p>导致恶意用户只要猜测其他管理页面的URL或者敏感的参数信息，就可以访问或控制其他角色拥有的数据或页面，</p><p>达到权限提升的目的</p><p><img src="/2021/06/11/%E8%B6%8A%E6%9D%83-%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91-%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/Blog\1.jpg"></p><h2 id="产生原因："><a href="#产生原因：" class="headerlink" title="产生原因："></a>产生原因：</h2><p>通常情况下，一个 Web 程序功能流程是登录 - 提交请求 - 验证权限 - 数据库查询 - 返回结果</p><p>如果验证权限不足，便会导致越权</p><p>常见的程序都会认为通过登录后即可验证用户的身份，从而不会做下一步验证，最后导致越权</p><p>开发人员在对数据进行增、删、改、查询时对客户端请求的数据过分相信二遗漏了权限的判定</p><h3 id="通过隐藏-URL"><a href="#通过隐藏-URL" class="headerlink" title="通过隐藏 URL"></a>通过隐藏 URL</h3><p>实现控制访问有些程序的管理员的管理页面只有管理员才显示，普通用户看不到，利用 URL 实现访问控制，但 </p><p>URL 泄露或被恶意攻击者猜到后，这会导致越权攻击</p><h3 id="直接对象引用"><a href="#直接对象引用" class="headerlink" title="直接对象引用"></a>直接对象引用</h3><p>通过修改一下参数就可以产生水平越权（eg：查看用户信息页面 URL 后加上自己的 id 便可查看，当修改为他人的 </p><p>ID 号时会返回他人的信息）</p><h3 id="多阶段功能"><a href="#多阶段功能" class="headerlink" title="多阶段功能"></a>多阶段功能</h3><p>多阶段功能是一个功能有多个阶段的实现（eg：修改密码，可能第一步是验证用户身份信息，号码验证码类…）</p><p>当验证成功后，跳到第二步，输入新密码，很多程序会在这一步不再验证用户身份，导致恶意攻击者抓包直接修改</p><p>参数值，导致可修改任意用户密码</p><h3 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h3><p>很多网站的下载功能，一些被下载的静态文件，例如 pdf、word、xls 等，可能只有付费用户或会员可下载，但当</p><p>这些文件的 URL 地址泄露后，导致任何人可下载，如果知道 URL 命名规则，则会便利服务器的收费文档进行批量</p><p>下载。</p><h3 id="平台配置错误"><a href="#平台配置错误" class="headerlink" title="平台配置错误"></a>平台配置错误</h3><p>一些程序会通过控件来限制用户的访问（eg：后台地址…）普通用户不属于管理员组，则不能访问</p><p>但当配置平台或配置控件错误时，就会出现越权访问。</p><h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><h3 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h3><p>抓包修改id</p><p>明白每个参数的作用，再根据参数来寻找越权</p><h3 id="技巧："><a href="#技巧：" class="headerlink" title="技巧："></a>技巧：</h3><p>一个站里面很多包的参数命名可能是通用的，或是变化不大的，可通过寻找包里的身份验证参数进行修改</p><h3 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h3><p>Pikachu靶场：Over Permission</p><p><a href="http://stupidwolf-woof.com/2021/06/10/Over-Permission/">Over Permission | Cyber security (stupidwolf-woof.com)</a></p><p>Webug靶场：越权修改密码</p>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/">逻辑漏洞</category>
+      
+      
+      <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      
+      <comments>http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83-%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91-%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Over Permission</title>
@@ -18,15 +99,14 @@
       <guid>http://example.com/2021/06/10/Over-Permission/</guid>
       <pubDate>Thu, 10 Jun 2021 14:33:48 GMT</pubDate>
       
-      <description>&lt;h1 id=&quot;Over-Permission&quot;&gt;&lt;a href=&quot;#Over-Permission&quot; class=&quot;headerlink&quot; title=&quot;Over Permission&quot;&gt;&lt;/a&gt;Over Permission&lt;/h1&gt;&lt;p&gt;如果使用A用户的权限去操作B用户的数据，A的权限小于B的权限，如果能够成功操作，则称之为越权操作   &lt;/p&gt;
+      <description>&lt;p&gt;如果使用A用户的权限去操作B用户的数据，A的权限小于B的权限，如果能够成功操作，则称之为越权操作   &lt;/p&gt;
 &lt;p&gt;越权漏洞形成的原因是后台使用了不合理的权限校验规则导致的                &lt;/p&gt;
 &lt;p&gt;一般越权漏洞容易出现在权限页面（需要登录的页面）增、删、改、查的的地方&lt;/p&gt;
-&lt;p&gt;后台需要对当前用户的权限进行校验，看其是否具备操作的权限，从而给出响应，而如果校验的规则过于简单则容&lt;/p&gt;
-&lt;p&gt;易出现越权漏洞&lt;/p&gt;</description>
+&lt;p&gt;后台需要对当前用户的权限进行校验，看其是否具备操作的权限，从而给出响应，而如果校验的规则过于简单则易出现越权漏洞&lt;/p&gt;</description>
       
       
       
-      <content:encoded><![CDATA[<h1 id="Over-Permission"><a href="#Over-Permission" class="headerlink" title="Over Permission"></a>Over Permission</h1><p>如果使用A用户的权限去操作B用户的数据，A的权限小于B的权限，如果能够成功操作，则称之为越权操作   </p><p>越权漏洞形成的原因是后台使用了不合理的权限校验规则导致的                </p><p>一般越权漏洞容易出现在权限页面（需要登录的页面）增、删、改、查的的地方</p><p>后台需要对当前用户的权限进行校验，看其是否具备操作的权限，从而给出响应，而如果校验的规则过于简单则容</p><p>易出现越权漏洞</p><span id="more"></span>           <h2 id="P1-水平越权"><a href="#P1-水平越权" class="headerlink" title="P1 水平越权"></a>P1 水平越权</h2><h3 id="S1-初步思考尝试"><a href="#S1-初步思考尝试" class="headerlink" title="S1 初步思考尝试"></a>S1 初步思考尝试</h3><p>—&gt;纯初学者，小白</p><p>—&gt;这部分较为繁琐，想看整理好的直接版本点击右侧目录</p><h4 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h4><p>点开题目进行观察</p><img src="/2021/06/10/Over-Permission/1.png" alt="1" style="zoom:67%;"><p>初次见到的题型是在合天网安实验室中跟着指导书在实验机上做的题</p><p>他是在已知了一个人的账号后再去进行抓包观察修改等一系列操作</p><p>但这里直接是一个Login</p><p>1.我先随便输入了Username与Password，用Burp进行抓包观察，并无用处—&gt;想法错误</p><p>2.打开开发者工具，观察该题的php文件，发现了有用信息</p><img src="/2021/06/10/Over-Permission/2.png" alt="2" style="zoom:67%;"><p>分别登录这三个账号，网页就是简单的个人介绍</p><h4 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h4><p>登录Lili账号，点击查看个人信息，观察URL</p><p>/op1_mem.php?username=lili&amp;submit=点击查看个人信息</p><p>—&gt;那么如果将username修改为其他两个人，会是什么样</p><p>修改为username=lucy  username=kobe</p><p>发现网页跳转到了相应的人的信息页面中</p><p>=&gt;存在水平越权漏洞</p><h3 id="S2-总结"><a href="#S2-总结" class="headerlink" title="S2 总结"></a>S2 总结</h3><p>1.观察源代码知三个账号：lucy/123456，lili/123456，kobe/123456</p><p>2.登陆后点击”点击查看个人信息“</p><p>3.观察URL：通过GET请求，将要查询的用户信息传递给后台</p><p>localhost/pikachu-master/vul/overpermission/op1/op1_mem.php?username=lili&amp;submit=点击查看个人信息</p><p>4.将username修改为lucy,kobe，提交申请后即可查看两人信息</p><p>5.结论：存在水平越权漏洞</p><h2 id="P2垂直越权"><a href="#P2垂直越权" class="headerlink" title="P2垂直越权"></a>P2垂直越权</h2><h4 id="Step-1-1"><a href="#Step-1-1" class="headerlink" title="Step 1"></a>Step 1</h4><p>点开题目观察，与上一题图片一样</p><p>按照上一题的思路：</p><p>打开开发者工具查看源代码，得到两条用户信息</p><img src="/2021/06/10/Over-Permission/4.png" alt="4" style="zoom:67%;"><h4 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2"></a>Step 2</h4><p>分别登录两个用户，进行观察</p><p>普通用户pikachu：</p><img src="/2021/06/10/Over-Permission/5.png" alt="5" style="zoom:67%;"><p>超级用户admin：</p><img src="/2021/06/10/Over-Permission/6.png" alt="6" style="zoom:50%;"><p>尝试修改URL无果</p><h4 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h4><p>登录admin账号进行添加操作，并用burp进行抓包</p><img src="/2021/06/10/Over-Permission/7.png" alt="7" style="zoom:67%;"><p>Cookie: PHPSESSID=4dl2v9a8o35dok7ght440s8477</p><p>登录普通用户</p><img src="/2021/06/10/Over-Permission/8.png" alt="8" style="zoom:80%;"><p>Cookie: PHPSESSID=nd2k3u867n9578uf7dur3ch04s</p><p>将管理员添加用户的包发送给repeater</p><p>修改管理员的Cookie为普通用户的Cookie，发送</p><img src="/2021/06/10/Over-Permission/9.png" alt="9" style="zoom:80%;"><p>发现以普通用户的身份进行了添加操作</p><img src="/2021/06/10/Over-Permission/10.png" alt="10" style="zoom:80%;"><p>更改username，password，sex等数值，仍以普通用户登录的身份插入进去</p><p>=&gt;存在垂直越权</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>如果使用A用户的权限去操作B用户的数据，A的权限小于B的权限，如果能够成功操作，则称之为越权操作   </p><p>越权漏洞形成的原因是后台使用了不合理的权限校验规则导致的                </p><p>一般越权漏洞容易出现在权限页面（需要登录的页面）增、删、改、查的的地方</p><p>后台需要对当前用户的权限进行校验，看其是否具备操作的权限，从而给出响应，而如果校验的规则过于简单则易出现越权漏洞</p><span id="more"></span>           <h1 id="P1-水平越权"><a href="#P1-水平越权" class="headerlink" title="P1 水平越权"></a>P1 水平越权</h1><h2 id="S1-初步思考尝试"><a href="#S1-初步思考尝试" class="headerlink" title="S1 初步思考尝试"></a>S1 初步思考尝试</h2><p>—&gt;纯初学者，小白</p><p>—&gt;这部分较为繁琐，想看整理好的直接版本点击右侧目录</p><h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>点开题目进行观察</p><img src="/2021/06/10/Over-Permission/1.png" alt="1" style="zoom:67%;"><p>初次见到的题型是在合天网安实验室中跟着指导书在实验机上做的题</p><p>他是在已知了一个人的账号后再去进行抓包观察修改等一系列操作</p><p>但这里直接是一个Login</p><p>1.我先随便输入了Username与Password，用Burp进行抓包观察，并无用处—&gt;想法错误</p><p>2.打开开发者工具，观察该题的php文件，发现了有用信息</p><img src="/2021/06/10/Over-Permission/2.png" alt="2" style="zoom:67%;"><p>分别登录这三个账号，网页就是简单的个人介绍</p><h3 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h3><p>登录Lili账号，点击查看个人信息，观察URL</p><p>/op1_mem.php?username=lili&amp;submit=点击查看个人信息</p><p>—&gt;那么如果将username修改为其他两个人，会是什么样</p><p>修改为username=lucy  username=kobe</p><p>发现网页跳转到了相应的人的信息页面中</p><p>=&gt;存在水平越权漏洞</p><h2 id="S2-总结"><a href="#S2-总结" class="headerlink" title="S2 总结"></a>S2 总结</h2><p>1.观察源代码知三个账号：lucy/123456，lili/123456，kobe/123456</p><p>2.登陆后点击”点击查看个人信息“</p><p>3.观察URL：通过GET请求，将要查询的用户信息传递给后台</p><p>localhost/pikachu-master/vul/overpermission/op1/op1_mem.php?username=lili&amp;submit=点击查看个人信息</p><p>4.将username修改为lucy,kobe，提交申请后即可查看两人信息</p><p>5.结论：存在水平越权漏洞</p><h1 id="P2垂直越权"><a href="#P2垂直越权" class="headerlink" title="P2垂直越权"></a>P2垂直越权</h1><h2 id="Step-1-1"><a href="#Step-1-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>点开题目观察，与上一题图片一样</p><p>按照上一题的思路：</p><p>打开开发者工具查看源代码，得到两条用户信息</p><img src="/2021/06/10/Over-Permission/4.png" alt="4" style="zoom:67%;"><h2 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2"></a>Step 2</h2><p>分别登录两个用户，进行观察</p><p>普通用户pikachu：</p><img src="/2021/06/10/Over-Permission/5.png" alt="5" style="zoom:67%;"><p>超级用户admin：</p><img src="/2021/06/10/Over-Permission/6.png" alt="6" style="zoom:50%;"><p>尝试修改URL无果</p><h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>登录admin账号进行添加操作，并用burp进行抓包</p><img src="/2021/06/10/Over-Permission/7.png" alt="7" style="zoom:67%;"><p>Cookie: PHPSESSID=4dl2v9a8o35dok7ght440s8477</p><p>登录普通用户</p><img src="/2021/06/10/Over-Permission/8.png" alt="8" style="zoom:80%;"><p>Cookie: PHPSESSID=nd2k3u867n9578uf7dur3ch04s</p><p>将管理员添加用户的包发送给repeater</p><p>修改管理员的Cookie为普通用户的Cookie，发送</p><img src="/2021/06/10/Over-Permission/9.png" alt="9" style="zoom:80%;"><p>发现以普通用户的身份进行了添加操作</p><img src="/2021/06/10/Over-Permission/10.png" alt="10" style="zoom:80%;"><p>更改username，password，sex等数值，仍以普通用户登录的身份插入进去</p><p>=&gt;存在垂直越权</p>]]></content:encoded>
       
       
       <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
@@ -49,13 +129,11 @@
       <guid>http://example.com/2021/06/10/Pikachu%E5%AE%89%E8%A3%85/</guid>
       <pubDate>Thu, 10 Jun 2021 13:37:10 GMT</pubDate>
       
-      <description>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;h1 id=&quot;Pikachu安装&quot;&gt;&lt;a href=&quot;#Pikachu安装&quot; class=&quot;headerlink&quot; title=&quot;Pikachu安装&quot;&gt;&lt;/a&gt;Pikachu安装&lt;/h1&gt;&lt;p&gt;Pikachu是一个带有漏洞的Web应用系统，在这里包含了常见的web安全漏洞。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Pikachu是一个带有漏洞的Web应用系统，在这里包含了常见的web安全漏洞。&lt;/p&gt;</description>
       
       
       
-      <content:encoded><![CDATA[<meta name="referrer" content="no-referrer"><h1 id="Pikachu安装"><a href="#Pikachu安装" class="headerlink" title="Pikachu安装"></a>Pikachu安装</h1><p>Pikachu是一个带有漏洞的Web应用系统，在这里包含了常见的web安全漏洞。</p><span id="more"></span><h2 id="漏洞类型"><a href="#漏洞类型" class="headerlink" title="漏洞类型"></a>漏洞类型</h2><ul><li>Burt Force(暴力破解漏洞)</li><li>XSS(跨站脚本漏洞)</li><li>CSRF(跨站请求伪造)</li><li>SQL-Inject(SQL注入漏洞)</li><li>RCE(远程命令/代码执行)</li><li>Files Inclusion(文件包含漏洞)</li><li>Unsafe file downloads(不安全的文件下载)</li><li>Unsafe file uploads(不安全的文件上传)</li><li>Over Permisson(越权漏洞)</li><li>../../../(目录遍历)</li><li>I can see your ABC(敏感信息泄露)</li><li>PHP反序列化漏洞</li><li>XXE(XML External Entity attack)</li><li>不安全的URL重定向</li><li>SSRF(Server-Side Request Forgery)</li><li>管理工具</li><li>More…</li></ul><h2 id="安装与使用"><a href="#安装与使用" class="headerlink" title="安装与使用"></a>安装与使用</h2><h3 id="Step-1-安装phpstudy"><a href="#Step-1-安装phpstudy" class="headerlink" title="Step 1 安装phpstudy"></a>Step 1 安装phpstudy</h3><p>百度搜索phpstudy，选择合适的版本即可</p><p><a href="https://www.xp.cn/">小皮面板(phpstudy) - 让天下没有难配的服务器环境！ (xp.cn)</a></p><p>安装好后界面（几个服务都是关闭状态，需手动开启）：</p><img src="/2021/06/10/Pikachu%E5%AE%89%E8%A3%85/1.png" style="zoom:38%;"><h3 id="Step-2-下载pikachu"><a href="#Step-2-下载pikachu" class="headerlink" title="Step 2 下载pikachu"></a>Step 2 下载pikachu</h3><p>github地址：<a href="https://github.com/zhuifengshaonianhanlu/pikachu">https://github.com/zhuifengshaonianhanlu/pikachu</a></p><p>下载好后将解压后的文件夹放在\phpstudy_pro\WWW下</p><h3 id="Step-3-使用pikachu靶场"><a href="#Step-3-使用pikachu靶场" class="headerlink" title="Step 3 使用pikachu靶场"></a>Step 3 使用pikachu靶场</h3><p>打开phpstudy的面板将Apache跟MySQL启动</p><p>修改\phpstudy_pro\WWW\pikachu-master\inc\config.inc.php中的数据库密码（一般都为“root”）</p><p>打开浏览器输入localhost/pikachu-master/index.php进行访问</p><img src="/2021/06/10/Pikachu%E5%AE%89%E8%A3%85/2.png" alt="2" style="zoom:75%;"><p>点击红色提示进行初始化</p><img src="/2021/06/10/Pikachu%E5%AE%89%E8%A3%85/3.png" alt="3" style="zoom:67%;"><p>即可开始使用靶场</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>Pikachu是一个带有漏洞的Web应用系统，在这里包含了常见的web安全漏洞。</p><span id="more"></span><h1 id="漏洞类型"><a href="#漏洞类型" class="headerlink" title="漏洞类型"></a>漏洞类型</h1><ul><li>Burt Force(暴力破解漏洞)</li><li>XSS(跨站脚本漏洞)</li><li>CSRF(跨站请求伪造)</li><li>SQL-Inject(SQL注入漏洞)</li><li>RCE(远程命令/代码执行)</li><li>Files Inclusion(文件包含漏洞)</li><li>Unsafe file downloads(不安全的文件下载)</li><li>Unsafe file uploads(不安全的文件上传)</li><li>Over Permisson(越权漏洞)</li><li>../../../(目录遍历)</li><li>I can see your ABC(敏感信息泄露)</li><li>PHP反序列化漏洞</li><li>XXE(XML External Entity attack)</li><li>不安全的URL重定向</li><li>SSRF(Server-Side Request Forgery)</li><li>管理工具</li><li>More…</li></ul><h1 id="安装与使用"><a href="#安装与使用" class="headerlink" title="安装与使用"></a>安装与使用</h1><h2 id="安装phpstudy"><a href="#安装phpstudy" class="headerlink" title="安装phpstudy"></a>安装phpstudy</h2><p>百度搜索phpstudy，选择合适的版本即可</p><p><a href="https://www.xp.cn/">小皮面板(phpstudy) - 让天下没有难配的服务器环境！ (xp.cn)</a></p><p>安装好后界面（几个服务都是关闭状态，需手动开启）：</p><img src="/2021/06/10/Pikachu%E5%AE%89%E8%A3%85/1.png" style="zoom:38%;"><h2 id="下载pikachu"><a href="#下载pikachu" class="headerlink" title="下载pikachu"></a>下载pikachu</h2><p>github地址：<a href="https://github.com/zhuifengshaonianhanlu/pikachu">https://github.com/zhuifengshaonianhanlu/pikachu</a></p><p>下载好后将解压后的文件夹放在\phpstudy_pro\WWW下</p><h2 id="使用pikachu靶场"><a href="#使用pikachu靶场" class="headerlink" title="使用pikachu靶场"></a>使用pikachu靶场</h2><p>打开phpstudy的面板将Apache跟MySQL启动</p><p>修改\phpstudy_pro\WWW\pikachu-master\inc\config.inc.php中的数据库密码（一般都为“root”）</p><p>打开浏览器输入localhost/pikachu-master/index.php进行访问</p><img src="/2021/06/10/Pikachu%E5%AE%89%E8%A3%85/2.png" alt="2" style="zoom:75%;"><p>点击红色提示进行初始化</p><img src="/2021/06/10/Pikachu%E5%AE%89%E8%A3%85/3.png" alt="3" style="zoom:67%;"><p>即可开始使用靶场</p>]]></content:encoded>
       
       
       <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
@@ -69,25 +147,6 @@
       
       
       <comments>http://example.com/2021/06/10/Pikachu%E5%AE%89%E8%A3%85/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>http://example.com/2021/06/08/hello-world/</link>
-      <guid>http://example.com/2021/06/08/hello-world/</guid>
-      <pubDate>Tue, 08 Jun 2021 08:05:32 GMT</pubDate>
-      
-      <description>&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. &lt;/p&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. </p><span id="more"></span><p>Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>http://example.com/2021/06/08/hello-world/#disqus_thread</comments>
       
     </item>
     
