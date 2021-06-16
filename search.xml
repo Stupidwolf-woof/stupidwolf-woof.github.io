@@ -138,6 +138,16 @@
 <p><a href="http://stupidwolf-woof.com/2021/06/10/Over-Permission/">Over Permission | Cyber security (stupidwolf-woof.com)</a></p>
 <p>Webug靶场：越权修改密码</p>
 <p><a href="http://stupidwolf-woof.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/">越权修改密码 | Cyber security (stupidwolf-woff.com)</a></p>
+<h1 id="支付逻辑漏洞"><a href="#支付逻辑漏洞" class="headerlink" title="支付逻辑漏洞"></a>支付逻辑漏洞</h1><h2 id="定义：-1"><a href="#定义：-1" class="headerlink" title="定义："></a>定义：</h2><p>支付历程中存在业务逻辑层的漏洞</p>
+<p>支付流程：选择商品和数量-&gt;选择支付及配送方式-&gt;生成订单-&gt;订单支付-&gt;完成支付</p>
+<h2 id="产生原因：-1"><a href="#产生原因：-1" class="headerlink" title="产生原因："></a>产生原因：</h2><p>直接在支付的关键步骤数据包中直接传递需要支付的金额</p>
+<p>后端未做校验，传递过程中也没做签名，导致可随意篡改金额提交</p>
+<h2 id="利用"><a href="#利用" class="headerlink" title="利用"></a>利用</h2><h3 id="场景举例"><a href="#场景举例" class="headerlink" title="场景举例"></a>场景举例</h3><p>1.修改购买数量</p>
+<p>2.修改支付价格</p>
+<p>3.修改支付对应的商品</p>
+<p>4.修改支付的状态</p>
+<p>5.修改附属优惠、领取优惠</p>
+<p>6.测试数据包未删除</p>
 ]]></content>
       <categories>
         <category>web安全</category>
