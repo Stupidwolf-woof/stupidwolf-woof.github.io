@@ -9,8 +9,29 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Many are stubborn in pursuit of the path they have chosen, few in pursuit of the goal</description>
-    <pubDate>Mon, 14 Jun 2021 05:05:01 GMT</pubDate>
+    <pubDate>Thu, 17 Jun 2021 14:04:14 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>汇编语言基础</title>
+      <link>http://example.com/2021/06/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</link>
+      <guid>http://example.com/2021/06/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</guid>
+      <pubDate>Thu, 17 Jun 2021 11:29:49 GMT</pubDate>
+      
+      
+      
+      
+      <category domain="http://example.com/categories/PWN/">PWN</category>
+      
+      <category domain="http://example.com/categories/PWN/%E6%B1%87%E7%BC%96/">汇编</category>
+      
+      
+      <category domain="http://example.com/tags/PWN/">PWN</category>
+      
+      
+      <comments>http://example.com/2021/06/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>越权修改密码</title>
