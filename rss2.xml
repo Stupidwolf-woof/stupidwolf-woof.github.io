@@ -9,8 +9,29 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Many are stubborn in pursuit of the path they have chosen, few in pursuit of the goal</description>
-    <pubDate>Thu, 24 Jun 2021 13:16:53 GMT</pubDate>
+    <pubDate>Thu, 24 Jun 2021 13:57:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>HTML+前端+JavaScript</title>
+      <link>http://example.com/2021/06/24/HTML-%E5%89%8D%E7%AB%AF-JavaScript/</link>
+      <guid>http://example.com/2021/06/24/HTML-%E5%89%8D%E7%AB%AF-JavaScript/</guid>
+      <pubDate>Thu, 24 Jun 2021 13:53:52 GMT</pubDate>
+      
+      
+      
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/5-%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/">5.跨站脚本攻击</category>
+      
+      
+      <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
+      
+      
+      <comments>http://example.com/2021/06/24/HTML-%E5%89%8D%E7%AB%AF-JavaScript/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>文件包含漏洞</title>
@@ -27,7 +48,7 @@
       
       <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
       
-      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</category>
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/6-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">6.文件包含</category>
       
       
       <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
@@ -52,7 +73,7 @@
       
       <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
       
-      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</category>
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/4-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">4.文件上传</category>
       
       
       <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
@@ -77,7 +98,7 @@
       
       <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
       
-      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</category>
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/4-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">4.文件上传</category>
       
       
       <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
@@ -102,7 +123,7 @@
       
       <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/">web安全</category>
       
-      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/">逻辑漏洞</category>
+      <category domain="http://example.com/categories/web%E5%AE%89%E5%85%A8/3-%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/">3.逻辑漏洞</category>
       
       
       <category domain="http://example.com/tags/web%E5%AE%89%E5%85%A8/">web安全</category>
